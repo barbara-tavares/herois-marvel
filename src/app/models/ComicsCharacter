@@ -1,0 +1,11 @@
+export interface ComicsCharacter {
+  id: number;
+  name: string;
+  comics: Comics;
+}
+
+export interface Comics {
+  id: number;
+  name: string;
+  description: string;
+}
