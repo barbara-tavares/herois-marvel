@@ -10,12 +10,12 @@ export class MarvelApiService {
   PUBLIC_KEY = '92ddea44aee274f90015fa9bcf5acb87';
   HASH = 'bdee048c20f60891139a4026830f0897';
   URL_API = 'https://gateway.marvel.com/';
-  SUFIX = `ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`;
+  SUFIX = `?ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`;
 
   constructor(private http: HttpClient) {}
 
   public getCharacters(): Observable<any> {
-    const URL_CHARACTERS = `${this.URL_API}/v1/public/characters?${this.SUFIX}`;
+    const URL_CHARACTERS = `${this.URL_API}/v1/public/characters${this.SUFIX}`;
     return this.http
       .get<any>(URL_CHARACTERS)
       .pipe(map((data: any) => data.data.results));

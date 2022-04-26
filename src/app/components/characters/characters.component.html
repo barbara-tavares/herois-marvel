@@ -1,1 +1,7 @@
-<p *ngFor="let character of characters">{{ character.name }}</p>
+<p *ngFor="let character of comicsCharacters">
+    {{ character.title }}
+    {{ character.description != null ? character.description : 'NA'}}
+</p>
+
+
+
